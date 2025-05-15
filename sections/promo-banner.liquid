@@ -40,13 +40,13 @@
 }
 {% endschema %}
 
-<div class="promo-banner" style="position:relative; text-align:center; overflow:hidden; margin:60px 0;">
+<div class="promo-banner">
   {% if section.settings.promo_image %}
-    <img src="{{ section.settings.promo_image | img_url: 'master' }}" alt="Promo" style="width:100%; height:auto;">
+    <img src="{{ section.settings.promo_image | img_url: 'master' }}" alt="Promo" class="promo-image">
   {% endif %}
-  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; text-shadow:0 2px 4px rgba(0,0,0,0.5);">
-    <h2 style="font-size:2.5rem; font-family:'Playfair Display', serif;">{{ section.settings.promo_heading }}</h2>
-    <p style="font-size:1.2rem; margin:20px 0;">{{ section.settings.promo_subheading }}</p>
+  <div class="promo-content">
+    <h2>{{ section.settings.promo_heading }}</h2>
+    <p>{{ section.settings.promo_subheading }}</p>
     {% if section.settings.button_link %}
       <a href="{{ section.settings.button_link }}" class="button-primary">{{ section.settings.button_text }}</a>
     {% endif %}
