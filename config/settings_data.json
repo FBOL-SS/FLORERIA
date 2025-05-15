@@ -20,6 +20,7 @@
       "hero-banner": {
         "type": "hero-banner",
         "settings": {
+          "hero_image": "shopify://shop_images/flower-shop-front.jpg",
           "hero_heading": "Descubre la Belleza en Cada Pétalo",
           "hero_subheading": "Arreglos Florales para Cada Ocasión",
           "button_text": "Explorar Arreglos",
@@ -28,13 +29,44 @@
       },
       "category-blocks": {
         "type": "category-blocks",
+        "blocks": {
+          "category_AnytVB": {
+            "type": "category",
+            "settings": {
+              "category_image": "shopify://shop_images/bridal-rose-bouquet.jpg",
+              "category_title": "ARREGLOS",
+              "category_link": ""
+            }
+          },
+          "category_UNcKhK": {
+            "type": "category",
+            "settings": {
+              "category_image": "shopify://shop_images/white-pink-and-purple-flowers-outside-a-flower-shop-in-paris.jpg",
+              "category_title": "MAYOREO",
+              "category_link": ""
+            }
+          },
+          "category_qTcPCf": {
+            "type": "category",
+            "settings": {
+              "category_image": "shopify://shop_images/flowers-for-sale.jpg",
+              "category_title": "PERSONALIZADOS",
+              "category_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "category_AnytVB",
+          "category_UNcKhK",
+          "category_qTcPCf"
+        ],
         "settings": {}
       },
       "featured-products": {
         "type": "featured-products",
         "settings": {
           "featured_collection": "",
-          "section_title": "Productos Destacados",
+          "section_title": "PRODUCTOS DESTACADOS",
           "products_limit": 4
         }
       },
