@@ -62,29 +62,36 @@ a:hover {
     color: #fff;
 }
 
-/* ================= HEADER ================= */
+/* ================= HEADER ESTILO PREMIUM ================= */
 .site-header {
     position: sticky;
     top: 0;
     width: 100%;
-    background: transparent;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .header-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
+/* Top Right Utility Icons */
 .header-utility {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1.2rem;
 }
 
 .icon-button {
@@ -98,15 +105,7 @@ a:hover {
     color: #DCAECF;
 }
 
-.cart-count {
-    background: #DCAECF;
-    color: #fff;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.75rem;
-    margin-left: 4px;
-}
-
+/* Logo Centered */
 .header-logo img {
     max-height: 80px;
     transition: transform 0.3s ease;
@@ -116,25 +115,46 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Navigation Menu */
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 .nav-link {
+    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     color: #333;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 .nav-link:hover {
     color: #DCAECF;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .header-utility {
+        right: 1rem;
+        top: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-logo img {
+        max-height: 60px;
+    }
 }
 
 /* ================= HERO BANNER ================= */
