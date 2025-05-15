@@ -1,1 +1,55 @@
-<!-- Placeholder for featured-products.liquid -->
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Productos Destacados"
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Number of Products",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products",
+      "category": "Home"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="featured-products" style="text-align:center; padding:40px 0;">
+  <h2 style="font-family:'Playfair Display', serif; font-size:2.5rem; margin-bottom:40px;">{{ section.settings.section_title }}</h2>
+  
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+    {% assign collection = collections[section.settings.featured_collection] %}
+    {% if collection.products.size > 0 %}
+      {% for product in collection.products limit: section.settings.products_limit %}
+        <div class="product-card" style="width:300px; text-align:center;">
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}" style="width:100%; border-radius:10px;">
+          </a>
+          <h3 style="font-family:'Playfair Display', serif; font-size:1.2rem; margin:15px 0 5px;">{{ product.title }}</h3>
+          <p style="color:#6F7652; font-size:1rem;">{{ product.price | money }}</p>
+          <a href="{{ product.url }}" class="button-primary" style="margin-top:10px; display:inline-block;">Ver Más</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No hay productos disponibles en esta colección.</p>
+    {% endif %}
+  </div>
+</div>
