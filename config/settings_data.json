@@ -83,6 +83,7 @@
       "image-with-text": {
         "type": "image-with-text",
         "settings": {
+          "section_image": "shopify://shop_images/woman-sits-on-a-grey-couch-and-holds-a-vase-of-peonies.jpg",
           "section_title": "El Arte de Regalar",
           "section_text": "Cada arreglo floral está diseñado con pasión y detalle para transmitir tus emociones.",
           "button_text": "Ver Más",
