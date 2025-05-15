@@ -27,11 +27,13 @@
   <div class="header-logo" style="margin-bottom:20px;">
     {% if section.settings.logo_image %}
       <img src="{{ section.settings.logo_image | img_url: 'medium' }}" alt="Logo" style="max-height:80px; width:auto;">
+    {% else %}
+      <h1 style="font-family:'Playfair Display', serif; font-size:2rem;">Florería Mil Pétalos</h1>
     {% endif %}
   </div>
 
   <nav class="header-menu">
-    <ul style="list-style:none; display:flex; gap:40px; margin:0; padding:0;">
+    <ul style="list-style:none; display:flex; justify-content:center; gap:40px; margin:0; padding:0;">
       <li><a href="/" style="color:#333; text-decoration:none; font-size:1rem;">Inicio</a></li>
       <li><a href="/collections/all" style="color:#333; text-decoration:none; font-size:1rem;">Arreglos</a></li>
       <li><a href="/pages/mayoreo" style="color:#333; text-decoration:none; font-size:1rem;">Mayoreo</a></li>
