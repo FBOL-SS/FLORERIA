@@ -69,7 +69,7 @@
         "settings": {
           "featured_collection": "frontpage",
           "section_title": "PRODUCTOS DESTACADOS",
-          "products_limit": 8
+          "products_limit": 3
         }
       },
       "promo-banner": {
