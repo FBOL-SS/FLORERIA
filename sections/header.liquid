@@ -80,9 +80,11 @@
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" aria-hidden="true">
-  <ul>
+  <ul class="mobile-nav-menu">
     {% for link in linklists[section.settings.main_menu].links %}
-      <li><a href="{{ link.url }}" class="mobile-nav-link">{{ link.title }}</a></li>
+      <li class="mobile-nav-item">
+        <a href="{{ link.url }}" class="mobile-nav-link">{{ link.title }}</a>
+      </li>
     {% endfor %}
   </ul>
 </div>
