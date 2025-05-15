@@ -93,6 +93,7 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "footer_logo": "shopify://shop_images/LOGO_MIL_PETALOS_SNC.png",
           "footer_text": "© 2025 Florería Mil Pétalos. Todos los derechos reservados."
         }
       }
