@@ -15,7 +15,8 @@
         "settings": {
           "logo": "shopify://shop_images/LOGO_MIL_PETALOS_SNC.png",
           "logo_width": 50,
-          "main_menu": "main-menu"
+          "main_menu": "main-menu",
+          "announcement_text": "🚚 Envío gratis en compras mayores a $1,000 MXN. ¡Aprovecha hoy!"
         }
       },
       "hero-banner": {
@@ -85,7 +86,7 @@
         "type": "image-with-text",
         "settings": {
           "section_image": "shopify://shop_images/woman-sits-on-a-grey-couch-and-holds-a-vase-of-peonies.jpg",
-          "section_title": "El Arte de Regalar",
+          "section_title": "EL ARTE DE REGALAR",
           "section_text": "Cada arreglo floral está diseñado con pasión y detalle para transmitir tus emociones.",
           "button_text": "Ver Más",
           "button_link": ""
