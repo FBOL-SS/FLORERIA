@@ -1,0 +1,35 @@
+{% layout 'theme' %}
+
+<div class="product-page">
+  <div class="product-gallery">
+    {% if product.images.size > 0 %}
+      <div class="main-image">
+        <img id="main-product-image" src="{{ product.images.first | img_url: '1024x1024' }}" alt="{{ product.title }}">
+      </div>
+      <div class="thumbnail-images">
+        {% for image in product.images %}
+          <img class="thumbnail" src="{{ image | img_url: '100x100' }}" alt="{{ product.title }}">
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="product-details">
+    <h1>{{ product.title }}</h1>
+    <p class="price">{{ product.price | money }}</p>
+    <div class="description">
+      {{ product.description }}
+    </div>
+
+    <form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <label for="quantity">Cantidad:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1">
+      <button type="submit" class="add-to-cart">Agregar al carrito</button>
+    </form>
+  </div>
+</div>
+
+{% comment %}
+  Incluye productos relacionados si es necesario
+{% endcomment %}
