@@ -4,48 +4,72 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "logo_image",
-      "label": "Logo"
+      "id": "logo",
+      "label": "Logo Image"
     },
     {
-      "type": "text",
-      "id": "phone_number",
-      "label": "Phone Number",
-      "default": "+52 872-104-6807"
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo Width",
+      "default": 150
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main Menu",
+      "default": "main-menu"
     }
   ]
 }
 {% endschema %}
 
-<!-- Top Bar -->
-<div style="width:100%; background-color:#6F7652; color:white; text-align:center; padding:8px 0; font-size:14px;">
-  📞 Llama al: {{ section.settings.phone_number }}
-</div>
+<header class="site-header">
+  <div class="header-container">
+    <!-- Utility Icons -->
+    <div class="header-utility">
+      <a href="/search" aria-label="Buscar" class="icon-button">🔍</a>
+      <a href="/account" aria-label="Cuenta" class="icon-button">👤</a>
+      <a href="/cart" aria-label="Carrito" class="icon-button">
+        🛒<span class="cart-count">{{ cart.item_count }}</span>
+      </a>
+    </div>
 
-<!-- Main Header -->
-<header style="display:flex; flex-direction:column; align-items:center; padding:30px 0; border-bottom:1px solid #eee;">
-  <div class="header-logo" style="margin-bottom:20px;">
-    {% if section.settings.logo_image %}
-      <img src="{{ section.settings.logo_image | img_url: 'medium' }}" alt="Logo" style="max-height:80px; width:auto;">
-    {% endif %}
+    <!-- Logo -->
+    <div class="header-logo">
+      {% if section.settings.logo %}
+        <a href="/" class="logo-link">
+          <img src="{{ section.settings.logo | img_url: 'master' }}" alt="Logo" style="width: {{ section.settings.logo_width }}px;">
+        </a>
+      {% else %}
+        <a href="/" class="logo-text">{{ shop.name }}</a>
+      {% endif %}
+    </div>
+
+    <!-- Navigation -->
+    <nav class="header-nav">
+      <ul class="nav-menu">
+        {% for link in linklists[section.settings.main_menu].links %}
+          <li><a href="{{ link.url }}" class="nav-link">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 
-  <nav class="header-menu">
-    <ul style="list-style:none; display:flex; gap:40px; margin:0; padding:0;">
-      <li><a href="/" style="color:#333; text-decoration:none; font-size:1rem;">Inicio</a></li>
-      <li><a href="/collections/all" style="color:#333; text-decoration:none; font-size:1rem;">Arreglos</a></li>
-      <li><a href="/pages/mayoreo" style="color:#333; text-decoration:none; font-size:1rem;">Mayoreo</a></li>
-      <li><a href="/pages/contact" style="color:#333; text-decoration:none; font-size:1rem;">Contacto</a></li>
-      <li><a href="/cart" style="color:#333; text-decoration:none; font-size:1rem;">🛒</a></li>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" aria-hidden="true">
+    <ul>
+      {% for link in linklists[section.settings.main_menu].links %}
+        <li><a href="{{ link.url }}" class="mobile-nav-link">{{ link.title }}</a></li>
+      {% endfor %}
     </ul>
-  </nav>
+  </div>
 </header>
-
-<style>
-  @media (max-width: 768px) {
-    .header-menu ul {
-      flex-direction: column;
-      gap: 15px;
-    }
-  }
-</style>
