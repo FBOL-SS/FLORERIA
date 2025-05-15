@@ -1,1 +1,54 @@
-<!-- Placeholder for image-with-text.liquid -->
+{% schema %}
+{
+  "name": "Image with Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "El Arte de Regalar"
+    },
+    {
+      "type": "textarea",
+      "id": "section_text",
+      "label": "Description",
+      "default": "Cada arreglo floral está diseñado con pasión y detalle para transmitir tus emociones."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Ver Más"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text",
+      "category": "Home"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="image-with-text" style="display:flex; align-items:center; justify-content:center; gap:40px; padding:60px 20px; flex-wrap:wrap;">
+  {% if section.settings.section_image %}
+    <img src="{{ section.settings.section_image | img_url: 'master' }}" alt="Section Image" style="width:500px; border-radius:10px;">
+  {% endif %}
+  <div style="max-width:500px; text-align:left;">
+    <h2 style="font-family:'Playfair Display', serif; font-size:2.5rem; margin-bottom:20px;">{{ section.settings.section_title }}</h2>
+    <p style="font-size:1.1rem; margin-bottom:30px;">{{ section.settings.section_text }}</p>
+    {% if section.settings.button_link %}
+      <a href="{{ section.settings.button_link }}" class="button-primary">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+</div>
