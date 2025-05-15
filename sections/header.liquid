@@ -22,6 +22,12 @@
       "id": "main_menu",
       "label": "Main Menu",
       "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "🚚 Envío gratis en compras mayores a $1,000 MXN. ¡Aprovecha hoy!"
     }
   ]
 }
@@ -61,3 +67,8 @@
 
   </div>
 </header>
+
+<!-- Announcement Bar BELOW the Header -->
+<div class="announcement-bar">
+  {{ section.settings.announcement_text }}
+</div>
