@@ -1,0 +1,87 @@
+{% schema %}
+{
+  "name": "Collection Template",
+  "settings": []
+}
+{% endschema %}
+
+<div class="collection-container">
+  <aside class="filters">
+    <h4>Filtrar por</h4>
+    <div>
+      <h5>Disponibilidad</h5>
+      <label><input type="checkbox"> En Stock</label><br>
+      <label><input type="checkbox"> Agotado</label>
+    </div>
+    <div>
+      <h5>Tipo de Producto</h5>
+      {% for type in collection.all_types %}
+        <label><input type="checkbox">{{ type }}</label><br>
+      {% endfor %}
+    </div>
+    <div>
+      <h5>Precio</h5>
+      <label><input type="radio" name="price"> Menos de $500</label><br>
+      <label><input type="radio" name="price"> $500 - $1000</label><br>
+      <label><input type="radio" name="price"> Más de $1000</label>
+    </div>
+  </aside>
+
+  <main class="product-grid">
+    {% for product in collection.products %}
+      <div class="product-card">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+          <p>${{ product.price | money }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </main>
+</div>
+
+<style>
+.collection-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.filters {
+  width: 250px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.product-card {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-card p {
+  color: #6F7652;
+  font-family: 'Lora', serif;
+}
+</style>
