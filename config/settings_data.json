@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_image": "shopify://shop_images/LOGO_MIL_PETALOS_SNC.png",
+          "phone_number": "+52 872-104-6807"
+        }
+      },
+      "hero-banner": {
+        "type": "hero-banner",
+        "settings": {
+          "hero_heading": "Descubre la Belleza en Cada Pétalo",
+          "hero_subheading": "Arreglos Florales para Cada Ocasión",
+          "button_text": "Explorar Arreglos",
+          "button_link": ""
+        }
+      },
+      "category-blocks": {
+        "type": "category-blocks",
+        "settings": {}
+      },
+      "featured-products": {
+        "type": "featured-products",
+        "settings": {
+          "featured_collection": "",
+          "section_title": "Productos Destacados",
+          "products_limit": 4
+        }
+      },
+      "promo-banner": {
+        "type": "promo-banner",
+        "settings": {
+          "promo_heading": "¡Oferta Especial!",
+          "promo_subheading": "Aprovecha nuestras promociones exclusivas.",
+          "button_text": "Ver Promoción",
+          "button_link": ""
+        }
+      },
+      "image-with-text": {
+        "type": "image-with-text",
+        "settings": {
+          "section_title": "El Arte de Regalar",
+          "section_text": "Cada arreglo floral está diseñado con pasión y detalle para transmitir tus emociones.",
+          "button_text": "Ver Más",
+          "button_link": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_text": "© 2025 Florería Mil Pétalos. Todos los derechos reservados."
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}
