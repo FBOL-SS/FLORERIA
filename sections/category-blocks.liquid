@@ -1,1 +1,49 @@
-<!-- Placeholder for category-blocks.liquid -->
+{% schema %}
+{
+  "name": "Category Blocks",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Category Title",
+          "default": "Categoría"
+        },
+        {
+          "type": "url",
+          "id": "category_link",
+          "label": "Category Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Blocks",
+      "category": "Home"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="category-blocks" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:40px 0;">
+  {% for block in section.blocks %}
+    <div style="position:relative; width:300px; height:400px; overflow:hidden; border-radius:10px;">
+      {% if block.settings.category_image %}
+        <img src="{{ block.settings.category_image | img_url: 'master' }}" alt="Category" style="width:100%; height:100%; object-fit:cover;">
+      {% endif %}
+      <a href="{{ block.settings.category_link }}" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; font-size:1.5rem; font-family:'Playfair Display', serif; text-decoration:none; background-color:rgba(0,0,0,0.5); padding:10px 20px; border-radius:5px;">
+        {{ block.settings.category_title }}
+      </a>
+    </div>
+  {% endfor %}
+</div>
