@@ -29,7 +29,8 @@
 
 <header class="site-header">
   <div class="header-container">
-    <!-- Utility Icons -->
+
+    <!-- Top Right Utility Icons -->
     <div class="header-utility">
       <a href="/search" aria-label="Buscar" class="icon-button">🔍</a>
       <a href="/account" aria-label="Cuenta" class="icon-button">👤</a>
@@ -38,7 +39,7 @@
       </a>
     </div>
 
-    <!-- Logo -->
+    <!-- Centered Logo -->
     <div class="header-logo">
       {% if section.settings.logo %}
         <a href="/" class="logo-link">
@@ -49,7 +50,7 @@
       {% endif %}
     </div>
 
-    <!-- Navigation -->
+    <!-- Main Navigation -->
     <nav class="header-nav">
       <ul class="nav-menu">
         {% for link in linklists[section.settings.main_menu].links %}
@@ -58,18 +59,5 @@
       </ul>
     </nav>
 
-    <!-- Mobile Hamburger -->
-    <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" aria-hidden="true">
-    <ul>
-      {% for link in linklists[section.settings.main_menu].links %}
-        <li><a href="{{ link.url }}" class="mobile-nav-link">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
   </div>
 </header>
