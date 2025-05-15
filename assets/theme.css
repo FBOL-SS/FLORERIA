@@ -1,136 +1,124 @@
-/* ================== FONTS ================== */
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
+/* ================= HEADER ================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.header-utility {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icon-button {
+    font-size: 1.2rem;
     color: #333;
-    scroll-behavior: smooth;
-    background-color: #fff;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    color: #222;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 20px 0;
-}
-
-p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-    margin: 0 0 20px 0;
-}
-
-/* ================== LINKS & BUTTONS ================== */
-a {
     text-decoration: none;
-    color: #333;
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #DCAECF; /* Rosa empolvado */
+.icon-button:hover {
+    color: #DCAECF;
 }
 
-.button-primary {
-    background-color: transparent;
-    color: #333;
-    border: 2px solid #DCAECF;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.button-primary:hover {
-    background-color: #DCAECF;
+.cart-count {
+    background: #DCAECF;
     color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    margin-left: 4px;
 }
 
-/* ================== HEADER ================== */
 .header-logo img {
     max-height: 80px;
-}
-
-.header-menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-}
-
-.header-menu a {
-    font-size: 1rem;
-    color: #333;
-    transition: color 0.3s ease;
-}
-
-/* ================== HERO BANNER ================== */
-.hero-banner h1 {
-    font-size: 3.5rem;
-    color: #fff;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-banner p {
-    font-size: 1.5rem;
-    color: #fff;
-}
-
-/* ================== CATEGORY BLOCKS ================== */
-.category-blocks div {
     transition: transform 0.3s ease;
 }
 
-.category-blocks div:hover {
-    transform: scale(1.03);
-}
-
-/* ================== PRODUCT CARDS ================== */
-.product-card img {
-    transition: transform 0.3s ease;
-    border-radius: 10px;
-}
-
-.product-card img:hover {
+.logo-link:hover img {
     transform: scale(1.05);
 }
 
-.product-card h3 {
-    font-size: 1.2rem;
-    margin: 15px 0 5px;
-    font-family: 'Playfair Display', serif;
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.product-card p {
-    color: #6F7652;
+.nav-link {
     font-size: 1rem;
-}
-
-/* ================== FOOTER ================== */
-.footer-social a {
-    margin: 0 10px;
     color: #333;
-    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* ================== MEDIA QUERIES ================== */
+.nav-link:hover {
+    color: #DCAECF;
+}
+
+/* Mobile */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 1rem;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
 @media (max-width: 768px) {
-    .header-menu ul {
-        flex-direction: column;
-        gap: 15px;
+    .header-nav {
+        display: none;
     }
 
-    .hero-banner h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-banner p {
-        font-size: 1.2rem;
+    .hamburger {
+        display: block;
     }
 }
