@@ -35,6 +35,12 @@
 
 <header class="site-header">
   <div class="header-container">
+    <!-- Hamburger Icon -->
+    <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
     <!-- Top Right Icons -->
     <div class="header-utility">
@@ -43,9 +49,6 @@
       <a href="/cart" aria-label="Carrito" class="icon-button">
         🛒<span class="cart-count">{{ cart.item_count }}</span>
       </a>
-      <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
 
     <!-- Centered Logo -->
@@ -59,7 +62,7 @@
       {% endif %}
     </div>
 
-    <!-- Main Navigation -->
+    <!-- Desktop Navigation -->
     <nav class="header-nav">
       <ul class="nav-menu">
         {% for link in linklists[section.settings.main_menu].links %}
@@ -67,11 +70,10 @@
         {% endfor %}
       </ul>
     </nav>
-
   </div>
 </header>
 
-<!-- Announcement Bar BELOW the Header -->
+<!-- Announcement Bar -->
 <div class="announcement-bar">
   {{ section.settings.announcement_text }}
 </div>
