@@ -1,4 +1,68 @@
-/* ================= HEADER ================== */
+/* ================= FONTS ================= */
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+}
+
+/* Header Sizes */
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+
+p, span, li {
+    font-family: 'Lora', serif;
+    color: #555;
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+}
+
+/* ================= LINKS & BUTTONS ================= */
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #DCAECF;
+}
+
+.button-primary {
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #DCAECF;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background-color: #DCAECF;
+    color: #fff;
+}
+
+/* ================= HEADER ================= */
 .site-header {
     position: sticky;
     top: 0;
@@ -64,7 +128,8 @@
     font-size: 1rem;
     color: #333;
     text-transform: uppercase;
-    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -72,53 +137,75 @@
     color: #DCAECF;
 }
 
-/* Mobile */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
+/* ================= HERO BANNER ================= */
+.hero-banner h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-family: 'Poppins', sans-serif;
 }
 
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #333;
-    margin: 5px 0;
-    transition: all 0.3s ease;
+.hero-banner p {
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: 'Lora', serif;
 }
 
-.mobile-menu {
-    display: none;
-    background: #fff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 999;
+/* ================= CATEGORY BLOCKS ================= */
+.category-blocks div {
+    transition: transform 0.3s ease;
 }
 
-.mobile-menu.active {
-    display: block;
+.category-blocks div:hover {
+    transform: scale(1.03);
 }
 
-.mobile-nav-link {
-    display: block;
-    padding: 1rem;
+/* ================= PRODUCT CARDS ================= */
+.product-card img {
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.product-card img:hover {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 15px 0 5px;
+}
+
+.product-card p {
+    color: #6F7652;
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+}
+
+/* ================= FOOTER ================= */
+.footer-social a {
+    margin: 0 10px;
     color: #333;
-    text-decoration: none;
-    text-align: center;
-    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    .header-nav {
-        display: none;
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .hamburger {
-        display: block;
+    .hero-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-banner p {
+        font-size: 1.2rem;
     }
 }
