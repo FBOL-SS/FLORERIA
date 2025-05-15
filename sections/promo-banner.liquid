@@ -1,1 +1,54 @@
-<!-- Placeholder for promo-banner.liquid -->
+{% schema %}
+{
+  "name": "Promo Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "promo_image",
+      "label": "Promo Image"
+    },
+    {
+      "type": "text",
+      "id": "promo_heading",
+      "label": "Promo Heading",
+      "default": "¡Oferta Especial!"
+    },
+    {
+      "type": "text",
+      "id": "promo_subheading",
+      "label": "Promo Subheading",
+      "default": "Aprovecha nuestras promociones exclusivas."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Ver Promoción"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo Banner",
+      "category": "Home"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="promo-banner" style="position:relative; text-align:center; overflow:hidden; margin:60px 0;">
+  {% if section.settings.promo_image %}
+    <img src="{{ section.settings.promo_image | img_url: 'master' }}" alt="Promo" style="width:100%; height:auto;">
+  {% endif %}
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; text-shadow:0 2px 4px rgba(0,0,0,0.5);">
+    <h2 style="font-size:2.5rem; font-family:'Playfair Display', serif;">{{ section.settings.promo_heading }}</h2>
+    <p style="font-size:1.2rem; margin:20px 0;">{{ section.settings.promo_subheading }}</p>
+    {% if section.settings.button_link %}
+      <a href="{{ section.settings.button_link }}" class="button-primary">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+</div>
