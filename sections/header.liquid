@@ -36,13 +36,16 @@
 <header class="site-header">
   <div class="header-container">
 
-    <!-- Top Right Utility Icons -->
+    <!-- Top Right Icons -->
     <div class="header-utility">
       <a href="/search" aria-label="Buscar" class="icon-button">🔍</a>
       <a href="/account" aria-label="Cuenta" class="icon-button">👤</a>
       <a href="/cart" aria-label="Carrito" class="icon-button">
         🛒<span class="cart-count">{{ cart.item_count }}</span>
       </a>
+      <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
     <!-- Centered Logo -->
@@ -71,4 +74,13 @@
 <!-- Announcement Bar BELOW the Header -->
 <div class="announcement-bar">
   {{ section.settings.announcement_text }}
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" aria-hidden="true">
+  <ul>
+    {% for link in linklists[section.settings.main_menu].links %}
+      <li><a href="{{ link.url }}" class="mobile-nav-link">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
 </div>
