@@ -255,6 +255,16 @@ a:hover {
     display: block;
 }
 
+.mobile-nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+
+.mobile-nav-item {
+    margin: 0.5rem 0;
+}
+
 .mobile-nav-link {
     display: block;
     padding: 1rem;
@@ -272,17 +282,21 @@ a:hover {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.5rem; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.4rem; }
+    p, span, li { font-size: 0.95rem; }
+
+    .hero-banner h1 { font-size: 2rem; }
+    .hero-banner p { font-size: 1.1rem; }
+
+    .button-primary {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
 
     .nav-menu {
         display: none;
-    }
-
-    .header-utility {
-        right: 1rem;
-        top: 1rem;
     }
 
     .header-logo img {
@@ -297,12 +311,15 @@ a:hover {
         font-size: 0.8rem;
         padding: 6px 0;
     }
+}
 
-    .hero-banner h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-banner p {
-        font-size: 1.2rem;
+@media (max-width: 480px) {
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    .hero-banner h1 { font-size: 1.8rem; }
+    .hero-banner p { font-size: 1rem; }
+    .button-primary {
+        font-size: 0.85rem;
+        padding: 8px 16px;
     }
 }
