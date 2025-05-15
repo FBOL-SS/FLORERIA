@@ -67,9 +67,9 @@
       "featured-products": {
         "type": "featured-products",
         "settings": {
-          "featured_collection": "",
+          "featured_collection": "frontpage",
           "section_title": "PRODUCTOS DESTACADOS",
-          "products_limit": 4
+          "products_limit": 8
         }
       },
       "promo-banner": {
