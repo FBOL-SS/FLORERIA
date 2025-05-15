@@ -62,19 +62,7 @@ a:hover {
     color: #fff;
 }
 
-/* Announcement Bar */
-.announcement-bar {
-    width: 100%;
-    background-color: #DCAECF; /* Rosa empolvado */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.95rem;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.5px;
-}
-
-/* Header Styling */
+/* ================= HEADER ESTILO PREMIUM ================= */
 .site-header {
     position: sticky;
     top: 0;
@@ -96,7 +84,7 @@ a:hover {
     gap: 1.5rem;
 }
 
-/* Top Right Icons */
+/* Top Right Utility Icons */
 .header-utility {
     position: absolute;
     top: 1.5rem;
@@ -117,7 +105,7 @@ a:hover {
     color: #DCAECF;
 }
 
-/* Logo */
+/* Logo Centered */
 .header-logo img {
     max-height: 80px;
     transition: transform 0.3s ease;
@@ -127,7 +115,7 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Navigation */
+/* Navigation Menu */
 .nav-menu {
     display: flex;
     gap: 3rem;
@@ -152,7 +140,7 @@ a:hover {
     color: #DCAECF;
 }
 
-/* Mobile */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
     .header-utility {
         right: 1rem;
