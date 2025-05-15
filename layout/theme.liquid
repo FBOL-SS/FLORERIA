@@ -1,1 +1,43 @@
-<!-- Placeholder for theme.liquid -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description | escape }}">
+    {{ content_for_header }}
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Shopify CSS -->
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+        color: #222;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% section 'header' %}
+
+    <main role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {% section 'footer' %}
+
+    <!-- Shopify Scripts -->
+    <script src="{{ 'theme.js' | asset_url }}"></script>
+  </body>
+</html>
